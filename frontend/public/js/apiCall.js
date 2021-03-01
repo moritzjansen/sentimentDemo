@@ -1,22 +1,24 @@
 const button = document.querySelector("#submit")
 const textArea = document.querySelector("#textInput")
 const sentimentSpan = document.querySelector("#sentimentValue")
-const calcText = document.querySelector("#calcText")
 
-button.addEventListener("click", (e) => {
-    e.preventDefault();
+
+button.addEventListener("click", async (e) => {
+
+    //set button to loading state
     button.disabled = true;
     button.innerText = "Loading..."
-    postData("http://localhost:5000/sentiment", { text: textArea.value })
-        .then(data => {
-            sentimentSpan.innerText = data.sentiment
-            calcText.classList.remove("invisible")
-            button.disabled = false;
-            button.innerText = "Calculate Sentiment";
-        })
+
+    const data = await postData("http://localhost:5000/sentiment", { text: textArea.value })
         .catch(error => {
             console.log(error)
+            sentimentSpan.innerText = "Sorry, something went wrong."
         })
+
+    //reset button
+    sentimentSpan.innerText = data.sentiment
+    button.disabled = false;
+    button.innerText = "Calculate Sentiment";
 })
 
 async function postData(url = '', data = {}) {

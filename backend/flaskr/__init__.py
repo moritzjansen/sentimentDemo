@@ -13,5 +13,5 @@ sia = SentimentIntensityAnalyzer()
 def analyze_sentiment():
     input_text = request.get_json()["text"]
     sentiment = sia.polarity_scores(input_text)["compound"]
-    output = {"sentiment": sentiment}
-    return output
+    
+    return {"sentiment": sentiment}
