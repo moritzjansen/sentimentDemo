@@ -1,0 +1,18 @@
+body{
+    background-color: #023744
+
+    
+}
+
+h1{
+    color: #ECE300;
+    text-align: center;
+}
+
+.mainComponent{
+    /* width: 60%; */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px #00000066;
+}
+

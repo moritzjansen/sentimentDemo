@@ -6,14 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentiment Demonstrator</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>
-    <div class="panel">
-        <textarea name="textInput" id="textInput" cols="30" rows="10"
-            placeholder="Please enter your text here"></textarea>
-        <button id=submit>Test Sentiment!</button>
-        <p>The calculated sentiment is: <span id=sentimentValue></span></p>
+    <h1 class="display-1 mb-5">Sentiment Analysis</h1>
+    <div class="container mainComponent">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6 align-content-center">
+                <h2 class="display-6 mt-3">How <i> positive</i> or <i>negative </i> is a given text?</h2>
+                <h5 class="lead text-muted mb-3">On a scale from -1 to 1</h5>
+
+                <textarea class="form-control" name="textInput" id="textInput" cols="30" rows="10"
+                    placeholder="Please enter your text here"></textarea>
+                <div class="d-grid gap-2 mt-2">
+                    <button id=submit class="btn btn-primary" type="button">
+                        Calculate Sentiment
+                    </button>
+                </div>
+
+                <div id="calcText" class="mb-6">
+                    <p class="lead mb-0 mt-4">Sentiment: </p>
+                    <p class="display-6 "><b id=sentimentValue>0</b></p>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="/js/apiCall.js"></script>
 </body>
