@@ -9,7 +9,7 @@ button.addEventListener("click", async (e) => {
     button.disabled = true;
     button.innerText = "Loading..."
 
-    const data = await postData("http://localhost:5000/sentiment", { text: textArea.value })
+    const data = await postData("/api/sentiment", { text: textArea.value })
         .catch(error => {
             console.log(error)
             sentimentSpan.innerText = "Sorry, something went wrong."
@@ -26,7 +26,6 @@ button.addEventListener("click", async (e) => {
 async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
-        mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },

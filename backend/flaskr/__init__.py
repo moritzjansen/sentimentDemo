@@ -1,11 +1,10 @@
 from flask import Flask
 from flask import request
-from flask_cors import CORS
 from nltk.sentiment import SentimentIntensityAnalyzer
 
 
 app = Flask(__name__)
-CORS(app)
+
 
 sia = SentimentIntensityAnalyzer()
 
