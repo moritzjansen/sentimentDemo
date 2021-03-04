@@ -30,4 +30,4 @@ The frontend runs on Express. It issues a POST request to the backend through th
 
 ## Tying everything together
 On top of the front- and backend there is a third service, which runs an nginx server. This way, only one port needs to be exposed. Additionaly, the backend doesn't need to be worried about CORS, as the frontend is in the same network (through docker-compose). 
-The server routes everything requests to localhost:8000 to the frontend, and requests to localhost:8000/api to the backend. 
+The server routes requests to `localhost:8000` to the frontend, and requests to `localhost:8000/api` to the backend. 
