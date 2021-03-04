@@ -15,8 +15,10 @@ button.addEventListener("click", async (e) => {
             sentimentSpan.innerText = "Sorry, something went wrong."
         })
 
+    if (data) {
+        sentimentSpan.innerText = data.sentiment
+    }
     //reset button
-    sentimentSpan.innerText = data.sentiment
     button.disabled = false;
     button.innerText = "Calculate Sentiment";
 })
