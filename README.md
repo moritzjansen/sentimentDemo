@@ -11,7 +11,7 @@ in the top level directory
 The webservice is available under `localhost:3000`
 
 ## Backend
-The backend runs on a Gunicorn server with Flask. It implements an API with a single endpoint: `/sentiment`. It accepts POST requests where the body contains the property `text` e.g.:
+The backend runs on a Gunicorn server with Flask. It implements an API with a single endpoint: `/sentiment`. The API accepts a POST requests where the body contains the property `text` e.g.:
 
 ```JSON
 {"text": "I'm happy to see you!"}
